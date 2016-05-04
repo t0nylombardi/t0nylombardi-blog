@@ -1,19 +1,10 @@
-nav({%='', if='', site.reverse='=', true='', %}id='nav-left', else='', endif='', %}='')
+nav#nav
   #nav-list
     a(href='/') Home
-    // Nav pages
-    {% for page in site.pages %}
-      {% if page.layout == "page" %}
-        a(href='{{ site.baseurl }}{{ page.url }}', title='{{ page.title }}') {{ page.title }}
-      {% endif %}
-    {% endfor %}
-    
+    a(href='/about') about
+    p.nav-hr
     // Nav links
-    {% include link.html %}
+    include link.jade
   
   // Nav footer
-  {% if site.custom_nav_footer == true %}
-    {% include nav-footer-custom.html %}
-  {% else %}
-    {% include nav-footer.html %}
-  {% endif %}
+  include nav-footer.jade

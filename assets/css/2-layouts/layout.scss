@@ -38,10 +38,9 @@
 #nav-left.menu-open-left {
   @include open(-14rem);
 }
-
 /* Separator after menu */
 
-#nav-list:after {
+.nav-hr:after {
   display: block;
   content: '';
   width: 5rem;

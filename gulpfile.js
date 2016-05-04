@@ -71,7 +71,6 @@ gulp.task('sass', function () {
 gulp.task('jade', function(){
   return gulp.src('_jadefiles/*.jade')
   .pipe(jade())
-  .on('error', console.error.bind(console))
   .pipe(gulp.dest('_includes'));
 });
 

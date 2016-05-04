@@ -450,7 +450,7 @@ a {
       width: 30%; } }
 
 /* Separator after menu */
-#nav-list:after {
+.nav-hr:after {
   display: block;
   content: '';
   width: 5rem;
