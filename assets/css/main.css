@@ -1,7 +1,7 @@
 /*- Base color -*/
 /*- Typography -*/
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Code Pro', sans-serif;
   letter-spacing: 0.01em; }
 
 /*- Typography for medium and small screen, based on 16px font-size -*/
@@ -335,13 +335,25 @@ blockquote {
  * Emerald is a simple blog theme built for Jekyll.
  */
 /*- Base reset -*/
-* {
-  box-sizing: border-box; }
-
 html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, img {
   margin: 0;
   padding: 0;
   border: 0; }
+
+html {
+  height: 100%;
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%; }
 
 /*- Code Block -*/
 pre {
@@ -502,12 +514,11 @@ a {
       position: static; } }
 
 #wrap {
-  min-height: 100%;
   position: relative; }
 
 #container {
   margin: 0 auto;
-  max-width: 730px;
+  max-width: 65%;
   padding: 0 1.5rem; }
 
 #header {
@@ -614,10 +625,9 @@ img[title="Emerald"] {
 /* Footer */
 footer {
   position: absolute;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  height: 60px;
-  /* Height of the footer */
+  left: 0;
   background-color: #408196;
   color: #FDFDFD;
   text-align: center;

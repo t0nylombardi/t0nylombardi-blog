@@ -65,12 +65,13 @@ gulp.task('sass', function () {
 });
 
 /*
-* Travis is trying to Gulp stuff
+* Compile files from _jadefiles into _includes
 */
 
 gulp.task('jade', function(){
   return gulp.src('_jadefiles/*.jade')
   .pipe(jade())
+  .on('error', console.error.bind(console))
   .pipe(gulp.dest('_includes'));
 });
 
@@ -82,8 +83,7 @@ gulp.task('jade', function(){
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
     gulp.watch('assets/js/**', ['jekyll-rebuild']);
-    gulp.watch(['index.html', '_layouts/*.html', '_includes/*', '_posts/*'], ['jekyll-rebuild']);
-    gulp.watch(['assets/js/**'], ['jekyll-rebuild']);
+    gulp.watch(['index.html', '_layouts/*.html', '_includes/*', '_posts/*.md'], ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });
 
