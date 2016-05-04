@@ -1,0 +1,40 @@
+# Site settings
+title: t0ny Lombardi | Full Stack Developer
+description: "The mind of t0nylombardi"
+url: "http://www.t0nylombardi.com"
+author:
+  name: "t0ny Lombrdi"
+  email: "me@t0nylombardi.com"
+  url: "http://www.t0nylombardi.com"
+
+# Build settings
+paginate: 8
+paginate_path: /page:num/
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+exclude: ["node_modules",
+  "gulpfile.js",
+  "package.json",
+  "README.md"]
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Custom variables
+version: "0.1.0"
+
+# Options
+custom_header: false
+custom_nav_footer: false
+reverse: false
+
+gems:
+    - jekyll-sitemap
+    - jekyll-paginate
