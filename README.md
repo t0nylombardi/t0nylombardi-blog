@@ -6,3 +6,9 @@ T0ny has over of IT experience and 3 years Ruby on Rails developing, including A
 
 
 ### TODO:
+- Write more post.
+- Be a better coder.
+- Eat.
+- Sleep.
+- Code.
+- Repeat.

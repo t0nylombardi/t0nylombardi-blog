@@ -1,37 +1,39 @@
 # Site settings
-title: t0ny Lombardi | Full Stack Developer
-description: "The mind of t0nylombardi"
-url: "http://www.t0nylombardi.com"
+title: t0nylombardi
+description: 't0nylombardi.com blog'
+url: 'http://t0nylombardi.com/'
+baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+
 author:
-  name: "t0ny Lombrdi"
-  email: "me@t0nylombardi.com"
-  url: "http://www.t0nylombardi.com"
+  name: 'T0ny Lombardi'
+  email: me@t0nylombardi.com
+  twitter_username: t0nylombardi
+  facebook_username: t0nylombardi
+  github_username:  t0nylombardi
+  linkedin_username:  t0nylombardi
 
-# Build settings
-paginate: 8
-paginate_path: /page:num/
-exclude: ["node_modules",
-  "gulpfile.js",
-  "package.json",
-  "README.md"]
-
-# Default values
 defaults:
   -
     scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: 'posts'
     values:
-      layout: "post"
+        layout: 'post'
 
-# Custom variables
-version: "0.1.0"
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
 
-# Options
-custom_header: false
-custom_nav_footer: false
-reverse: false
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
 
-gems:
-    - jekyll-sitemap
-    - jekyll-paginate
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
