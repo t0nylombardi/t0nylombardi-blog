@@ -1,5 +1,8 @@
 ---
 title: Ruby Twitter Bot
+date:   2016-05-04 15:04:23
+categories: [jekyll]
+tags: [jekyll]
 ---
 
 I been trying to help a friend get more attention to his twitter and his music. I choose to try to automate search results and reply back to each user with a message. Upon doing this, I discovered it would take two ruby gems.
