@@ -1,3 +1,5 @@
+My now wife aded me to make some vows for our wedding.  I thought I would merge the two loves together and wrote this little code poem. The original was written in PHP.  
+
 ```ruby
 #all you need is love 
 require 'date'
