@@ -6,14 +6,22 @@ tags: [ruby]
 ---
 
 
-If you are sending out content to you customers, it pretty handy to know if they are opening them. If you have ever sent out an email newsletter from a service like Mailchimp, you would have seen email open graphs. Of course, tracking this stuff is super important for a campaign, but it would also be interesting to see if users are opening, for example, welcome emails or onboarding emails.
+If you are sending out content to your customers, it pretty handy to know if the content is loading. I speak if you are sending out emails, newsletters, ads, etc.  If you have ever sent out an email newsletter from a service like Mailchimp, you would have seen email open graphs. Of course, tracking this stuff is super important for a campaign, but it would also be interesting to see if users are seeing your content.
 
-The simplest way to do this is via a tracking pixel – a small, invisible image that is loaded off your server every time the email is opened (See caveat below). This is fairly simple to achieve using Rails by building a simple Rack application.
+The simplest way to do this is via a tracking pixel – a small, invisible image that is loaded from your server every time your medium is opened. This is fairly simple to achieve using Rails by building a simple Rack application.
 
-Caveat
-----
-This only works for HTML emails (unless you can work out how to embed an image in a plain text email), and relies on the user having “Load images” turned on. Clearly, this isn’t super accurate, but it should give you a decent estimate.
+The idea
+---
+Picture you are creating ads for clients and you are sending them out to ad shops. If you are using a program like Google Doubleclick. Google DoubleClick allows you to track your ad through a pixel tracking url.  This data can be gathered to figure out trends when those ads, emails, or newletters are being opened.  
 
 The Setup
 ---
-We’ll add two models: One to tracking sending email, and one to track opening of email:
+We’ll add one model: One to tracking pixels:
+
+`rails generate model pixel ip_address, campaign, station, created_at:date ,city, state, user_agent, referral, banner_size`
+
+All of these fields are strings except for created_at so by default they are created as strings. 
+
+```ruby
+
+```
