@@ -4,7 +4,7 @@ description: 't0nylombardi.com blog'
 url: 'http://t0nylombardi.com/'
 baseurl: '/'
 # google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+disqus_shortname: 't0nylombardi'
 
 author:
   name: 'T0ny Lombardi'
