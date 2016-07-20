@@ -1,7 +1,14 @@
+---
+title: Parsing An Email List
+date:   2014-11-18
+categories: [ruby]
+tags: [ruby]
+---
+
 My now wife aded me to make some vows for our wedding.  I thought I would merge the two loves together and wrote this little code poem. The original was written in PHP.  
 
 ```ruby
-#all you need is love 
+#all you need is love
 require 'date'
 require 'love'
 
