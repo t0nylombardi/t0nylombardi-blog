@@ -1,5 +1,5 @@
 ---
-title: Parsing An Email List
+title: All you need is love
 date:   2014-11-18
 categories: [ruby]
 tags: [ruby]
