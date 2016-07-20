@@ -10,7 +10,7 @@ author:
   name: 'T0ny Lombardi'
   email: me@t0nylombardi.com
   twitter_username: t0nylombardi
-  facebook_username: 
+  facebook_username:
   github_username:  t0nylombardi
   linkedin_username:  anthonyjlombardi
 
@@ -24,7 +24,6 @@ defaults:
 
 # Build settings
 destination: _site
-paginate: 10
 permalink: /:year/:title/
 markdown: kramdown
 highlighter: rouge
@@ -35,5 +34,8 @@ kramdown:
   # do not replace newlines by <br>s
   hard_wrap: false
 
-gems: ['jekyll-paginate']
+gems: [jekyll-paginate, 'jekyll-gist']
+paginate: 10
+paginate_path: "page:num"
+
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
