@@ -3,7 +3,7 @@ title: t0nylombardi
 description: 't0nylombardi.com blog'
 url: 'http://t0nylombardi.com/'
 baseurl: '/'
-# google_analytics: 'UA-XXXXXX-X'
+google_analytics: 'UA-62268433-1'
 disqus_shortname: 't0nylombardi'
 
 author:
