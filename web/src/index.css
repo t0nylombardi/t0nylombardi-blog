@@ -25,6 +25,7 @@ hr {
 }
 
 .blog__container {
+  min-height: 100vh;
   position: absolute !important;
   top: 0;
   left: 0;
@@ -33,9 +34,14 @@ hr {
 }
 
 .front-panel__container {
+  min-height: 100vh;
   position: absolute !important;
   top: 0;
   left: 0;
   right: 0;
   z-index: 500;
+}
+
+.blog-social {
+  margin: 0 auto !important;
 }

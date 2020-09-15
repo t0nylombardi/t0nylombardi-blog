@@ -7,6 +7,7 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@redwoodjs/forms": "^0.17.2",
@@ -18,6 +19,9 @@
     "react": "^16.13.1",
     "react-bulma-components": "^3.4.0",
     "react-dom": "^16.13.1",
+    "react-pose": "^4.0.10",
+    "react-spring": "^8.0.27",
+    "react-use": "^15.3.4",
     "rebass-extend": "^1.0.1",
     "styled-components": "^5.2.0",
     "styled-system": "^5.1.5",

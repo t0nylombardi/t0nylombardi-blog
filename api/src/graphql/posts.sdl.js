@@ -3,8 +3,6 @@ export const schema = gql`
     id: Int!
     title: String!
     body: String!
-    images: [Image]!
-    tags: [Tag]!
     publishedAt: String!
     createdAt: DateTime!
   }
