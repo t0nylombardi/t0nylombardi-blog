@@ -15,32 +15,35 @@ hr {
 	border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
 }
 
-.blog__wrapper {
-  position: relative;
-}
 
 .ajl-avatar {
   border: 3px solid #fff;
   border-radius:100%;
 }
 
-.blog__container {
-  min-height: 100vh;
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 400;
+.blog__wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  /* min-height: 100vh !important; */
+}
+
+.blog__grid {
+  /* grid-area: 1 / 1 / 2 / 2; */
 }
 
 .front-panel__container {
-  min-height: 100vh;
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 500;
+  min-height: 100vh !important;
+  overflow: hidden;
+  /* z-index: 500; */
 }
+
+.blog__container {
+  /* margin-left: 45rem; */
+  /* width: 100%; */
+  /* z-index: 400; */
+}
+
+
 
 .blog-social {
   margin: 0 auto !important;
