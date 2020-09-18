@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import BlogLayout from 'src/layouts/BlogLayout'
+import BlogPostsCell from 'src/components/BlogPostsCell'
 import { useSpring, animated } from 'react-spring'
-import { useMeasure } from 'react-use'
 import Avatar from 'src/components/Avatar/Avatar'
 import 'react-bulma-components/dist/react-bulma-components.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,26 +14,18 @@ import {
 import BlogButton from 'src/components/Button'
 
 const HomePage = () => {
-  const defaultWidth = '100vw'
+  const defaultWidth = '101vw'
 
   const [open, toggle] = useState(false)
-  const [contentWidth, setContentWidth] = useState(defaultWidth)
-  const [ref, { width }] = useMeasure()
 
   const condense = useSpring({
     config: { friction: 10 },
     width: open ? `45vw` : defaultWidth,
   })
 
-  useEffect(() => {
-    setContentWidth(width)
-    window.addEventListener('resize', setContentWidth(width))
-    return window.removeEventListener('resize', setContentWidth(width))
-  }, [width])
-
   return (
     <BlogLayout>
-      <animated.div style={condense} ref={ref}>
+      <animated.div style={condense}>
         <div className="hero is-success is-fullheight blog__grid front-panel__container">
           <div className="hero-body">
             <div className="container">
@@ -92,12 +84,11 @@ const HomePage = () => {
         </div>
       </animated.div>
 
-      <section className="blog__container blog__grid">
-        <div className="hero is-primary is-fullheight">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">blog title</h1>
-              <h2 className="subtitle">Fullwidth subtitle</h2>
+      <section className="blog__container">
+        <div className="container-flex">
+          <div className="">
+            <div className="">
+              <BlogPostsCell />
             </div>
           </div>
         </div>
