@@ -16,7 +16,7 @@ model Post {
   body        String
   images      Image[]
   tags        Tag[]
-  publishedAt String?
+  publishedAt String
   createdAt   DateTime @default(now())
 }
 

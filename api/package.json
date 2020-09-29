@@ -4,5 +4,8 @@
   "private": true,
   "dependencies": {
     "@redwoodjs/api": "^0.17.2"
+  },
+  "devDependencies": {
+    "faker": "^5.1.0"
   }
 }

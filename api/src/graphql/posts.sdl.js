@@ -3,7 +3,7 @@ export const schema = gql`
     id: Int!
     title: String!
     body: String!
-    publishedAt: String?
+    publishedAt: String
     createdAt: DateTime!
   }
 
