@@ -1,3 +1,4 @@
+import { Link, routes } from '@redwoodjs/router'
 import Avatar from 'src/components/Avatar/Avatar'
 import 'react-bulma-components/dist/react-bulma-components.min.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,12 +40,14 @@ const FrontPanel = ({ updateState }) => {
                 </BlogButton>
               </div>
               <div className="column is-narrow-mobile">
-                <BlogButton>
-                  <span className="icon">
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </span>
-                  <span>Twitter</span>
-                </BlogButton>
+                <Link to={routes.about()}>
+                  <BlogButton>
+                    <span className="icon">
+                      <FontAwesomeIcon icon={faTwitter} />
+                    </span>
+                    <span>Twitter</span>
+                  </BlogButton>
+                </Link>
               </div>
               <div className="column is-narrow-mobile">
                 <BlogButton>

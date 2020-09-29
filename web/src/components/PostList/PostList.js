@@ -1,3 +1,5 @@
+import { Link, routes } from '@redwoodjs/router'
+
 const PostList = ({ posts }) => {
   return (
     <div className="main-post-list">
@@ -5,9 +7,9 @@ const PostList = ({ posts }) => {
         <ol className="post-list" key={post.id}>
           <li>
             <h2 className="post-list__post-title post-title">
-              <a href="#" title="{post.title}">
+              <Link to={routes.post({ id: post.id })} title={post.title}>
                 {post.title}
-              </a>
+              </Link>
             </h2>
             <p className="excerpt">
               {post.body.length > 175 ? (
