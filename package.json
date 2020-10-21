@@ -1,23 +1,47 @@
 {
+  "name": "t0nylombardiblog",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "api",
-      "web"
-    ]
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "classnames": "^2.2.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.4.3",
+    "tailwindcss": "^1.9.5",
+    "typescript": "~3.7.2"
   },
-  "devDependencies": {
-    "@redwoodjs/core": "^0.17.2"
+  "scripts": {
+    "build:tailwind": "tailwindcss build src/index.css -o src/tailwind.output.css",
+    "prestart": "npm run build:tailwind",
+    "prebuild": "npm run build:tailwind",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config"
+    "extends": "react-app"
   },
-  "engines": {
-    "node": ">=12",
-    "yarn": ">=1.15"
-  },
-  "dependencies": {
-    "g": "^2.0.1",
-    "yarn": "^1.22.5"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
