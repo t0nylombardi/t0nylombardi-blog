@@ -1,46 +1,58 @@
 import React from "react";
+import Button from "./components/Button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const App = () => {
   return (
     <div className="bg-blue-200 h-screen">
-      <div className="front-cover flex h-screen">
-        <div className="w-1/2 flex bg-rand-front-cover bg-cover justify-center items-center">
-          <div className="flex-col justify-center items-center">
-            <div>
+      <div className="flex h-screen">
+        <div className="front-cover w-1/4 flex h-full bg-rand-front-cover bg-cover justify-center items-center">
+          <div className="flex justify-center w-full h-full bg-gradient-to-t from-gray-800 to-transparent bg-cover">
+            <div className="flex flex-col justify-center items-center">
               <a href="#">
                 <img
-                  className="w-56 shadow-xl rounded-full border-2 border-white"
+                  className="w-64 shadow-xl rounded-full border-2 border-white"
                   src="https://placebeard.it/512x512"
                   alt="t0nylombardi"
                 />
               </a>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-              <a href="#" className="font-semibold block hover:text-white mt-2">
-                t0nylombardi
-              </a>
-              <div className="text-gray-500 mt-2">t0nylombardi.com blog</div>
-            </div>
-            <hr className="py-2" />
-            <div className="flex flex-row justify-center items-center mt-4 -mx-4">
-              <div className="w-1/4 mx-4">
-                <button className="bg-transparent hover:bg-gray-100 text-white font-semibold border border-white shadow py-2 px-4 rounded-full">
-                  blog
-                </button>
+
+              <div className="flex flex-col justify-center items-center">
+                <h1 className="text-4xl text-shadow-lg text-white">
+                  t0nylombardi
+                </h1>
+                <div className="text-gray-500 mt-2">t0nylombardi.com blog</div>
               </div>
-              <button className="bg-transparent hover:bg-gray-100 text-white font-semibold border border-white shadow py-2 px-4 rounded-full">
-                blog
-              </button>
-              <button className="bg-transparent hover:bg-gray-100 text-white font-semibold border border-white shadow py-2 px-4 rounded-full">
-                blog
-              </button>
-              <button className="bg-transparent hover:bg-gray-100 text-white font-semibold border border-white shadow py-2 px-4 rounded-full">
-                blog
-              </button>
+
+              <div className="social-wrapper flex flex-row justify-center items-center mt-4 mb-6">
+                <div className="mx-6">
+                  <Button>
+                    <FontAwesomeIcon className="mr-2" icon={faBlog} />
+                    <span>blog</span>
+                  </Button>
+                </div>
+                <div className="flex flex-row">
+                  <Button>
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </Button>
+                  <Button>
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </Button>
+                  <Button>
+                    <FontAwesomeIcon icon={faGithub} />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-1/2">
+        <div className="w-3/4 bg-white">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
           tenetur, error culpa vitae praesentium esse possimus nihil, nobis
           temporibus officia inventore ab officiis aliquid reprehenderit
