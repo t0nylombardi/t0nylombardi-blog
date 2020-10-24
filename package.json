@@ -21,20 +21,23 @@
     "chokidar-cli": "^2.1.0",
     "classnames": "^2.2.6",
     "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.7.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
     "tailwindcss": "^1.9.5",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "watch": "^1.0.2"
   },
   "scripts": {
-    "build:tailwind": "tailwindcss build src/index.css -o src/tailwind.output.css",
+    "build:tailwind": "tailwindcss build src/App.css -o src/index.css",
     "prestart": "npm run build:tailwind",
     "prebuild": "npm run build:tailwind",
-    "watch:tailwind": "chokidar 'tailwind.config.js' --initial=true -c 'npm run watch'",
-    "watch:css": "postcss src/index.css -o src/tailwind.output.css -w",
+    "watch:dev": "nodemon -x npm run build:tailwind -w tailwind.config.js -w src/App.css",
+    "watch:css": "chokidar 'src/**/*.css' --ignore src/index.css -c 'npm run build:tailwind'",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "watch": "run-p build:tailwind watch:css watch:dev start",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -52,5 +55,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "postcss": "^8.1.4",
+    "postcss-cli": "^8.1.0"
   }
 }
