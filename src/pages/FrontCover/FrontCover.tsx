@@ -30,11 +30,16 @@ const FrontCover: React.FC = () => {
           </div>
 
           <div className="social-wrapper flex flex-row justify-center items-center mt-4 mb-6">
-            <div className="mx-6">
-              <Link to={url ? "/resume" : "/"} onClick={() => setUrl(!url)}>
-                <Button>{url ? "resume" : "blog"}</Button>
+            <div className="mr-6 group focus:outline-none">
+              <Link
+                to={url ? "/resume" : "/"}
+                className="focus:outline-none"
+                onClick={() => setUrl(!url)}
+              >
+                <Button>{url ? "RESUME" : "BLOG"}</Button>
               </Link>
             </div>
+
             <div className="socials flex flex-row">
               <Button className="mx-2 rounded-full">
                 <FontAwesomeIcon icon={faTwitter} />
