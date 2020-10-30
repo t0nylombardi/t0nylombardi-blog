@@ -10822,7 +10822,6 @@ video {
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 1em;
   color: #666666;
 }
 
@@ -10865,7 +10864,6 @@ hr {
 .post-list-meta {
   display: block;
   margin: 0.7em 0 0 0;
-  font-size: 0.9em;
   color: #c7c7c7;
 }
 

@@ -34,6 +34,15 @@ module.exports = {
       "gray-800-spotify": "#181818",
       "gray-700-spotify": "#282828",
     },
+    container: {
+      center: true,
+      padding: {
+        default: "6rem",
+        sm: "2rem",
+        lg: "8rem",
+        xl: "10rem",
+      },
+    },
     backgroundColor: (theme) => theme("colors"),
     backgroundImage: {
       none: "none",
