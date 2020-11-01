@@ -4,7 +4,7 @@ import Markdown from "react-markdown";
 import codeFrontmatter from "remark-code-frontmatter";
 import html from "remark-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import axios from "axios";
 
 const Post: React.FC = () => {
@@ -17,7 +17,7 @@ const Post: React.FC = () => {
         "https://raw.githubusercontent.com/t0nylombardi/blog/gh-pages/_posts/2016-07-19-Sorry-I-hacked-you.md"
       )
       .then((res) => {
-        console.log("md", res);
+        console.log("md", res.data);
         setMd(res.data);
       });
   });
@@ -26,7 +26,7 @@ const Post: React.FC = () => {
     code: ({ language, value }: any) => {
       return (
         <SyntaxHighlighter
-          style={darcula}
+          style={dracula}
           language={language}
           children={value}
         />
