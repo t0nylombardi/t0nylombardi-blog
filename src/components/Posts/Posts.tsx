@@ -1,15 +1,8 @@
 import * as React from "react";
+import { Post } from "../../types/types";
 import { Link } from "react-router-dom";
 
 const moment = require("moment");
-
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  createdAt: Date;
-  slug: string[];
-}
 
 interface PostsProps {
   posts: Post[];
@@ -36,7 +29,7 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
               </p>
               <div className="post-list-meta ">
                 <time>
-                  {moment(post.createdAt).format("dddd, MMMM Do YYYY")}
+                  {moment(post.created_at).format("dddd, MMMM Do YYYY")}
                 </time>
                 •
                 <span>

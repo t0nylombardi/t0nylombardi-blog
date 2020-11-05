@@ -20,7 +20,7 @@ const populatePosts = (n: number) => {
       id: i + 1,
       title: faker.name.jobDescriptor(),
       body: faker.lorem.paragraphs(),
-      createdAt: faker.date.past(5),
+      created_at: faker.date.past(5),
       slug: populateSlugs(),
     });
   }
