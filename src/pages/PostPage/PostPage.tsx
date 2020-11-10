@@ -2,11 +2,11 @@ import * as React from "react";
 import Container from "../../components/Container/Container";
 import Post from "../../components/Post/Post";
 
-const PostPage: React.FC = () => {
+const PostPage: React.FC = (props) => {
   return (
     <div className="overflow-scroll">
       <Container>
-        <Post />
+        <Post {...props} />
       </Container>
     </div>
   );

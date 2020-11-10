@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Post } from "../../types/types";
 import BlogDataService from "../../api/services/BlogService";
+import { Link } from "react-router-dom";
+import "./Post.scss";
 
-import { Link, RouteComponentProps } from "react-router-dom";
 import Markdown from "react-markdown";
 import codeFrontmatter from "remark-code-frontmatter";
 import html from "remark-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import axios from "axios";
 
-interface RouteParams {
-  id: string;
-}
-
-interface MyComponentProps extends RouteComponentProps<RouteParams> {}
-
-const UsePost: React.FC<MyComponentProps> = (props) => {
+const UsePost: React.FC = (props) => {
   const [post, setPost] = useState<Post>({
     id: 0,
     title: "",
@@ -25,20 +19,20 @@ const UsePost: React.FC<MyComponentProps> = (props) => {
     slug: [],
   });
 
-  const getPost = (id: number) => {
-    BlogDataService.get(id)
+  useEffect(() => {
+    getPost(props);
+  }, [props]);
+
+  const getPost = (props: any) => {
+    BlogDataService.get(props.match.params.id)
       .then((response) => {
         setPost(response.data);
-        console.log(response.data);
+        console.log("success: ", response.data);
       })
       .catch((e) => {
         console.log("error: ", e);
       });
   };
-
-  useEffect(() => {
-    getPost(Number(props.match.params.id));
-  }, [props.match.params.id]);
 
   const renderers = {
     code: ({ language, value }: any) => {

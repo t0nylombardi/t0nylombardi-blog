@@ -30,7 +30,7 @@ const populatePosts = (n: number) => {
 const PostList: React.FC = () => {
   const data = populatePosts(20);
   return (
-    <div className="blog-wrapper overflow-scroll bg-white">
+    <div className="blog-wrapper bg-white">
       <Container>
         <div className="post-list-wrapper mt-24">
           <Posts posts={data} />
