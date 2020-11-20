@@ -3,12 +3,7 @@ import { Post } from "../../types/types";
 import BlogDataService from "../../api/services/BlogService";
 import { Link } from "react-router-dom";
 import "./Post.scss";
-
-import Markdown from "react-markdown";
-import codeFrontmatter from "remark-code-frontmatter";
-import html from "remark-html";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import MarkdownContent from "../MarkdownContent/MarkdownContent";
 
 const UsePost: React.FC = (props) => {
   const [post, setPost] = useState<Post>({
@@ -27,27 +22,19 @@ const UsePost: React.FC = (props) => {
     BlogDataService.get(props.match.params.id)
       .then((response) => {
         setPost(response.data);
-        console.log("success: ", response.data);
       })
       .catch((e) => {
         console.log("error: ", e);
       });
   };
 
-  const renderers = {
-    code: ({ language, value }: any) => {
-      return (
-        <SyntaxHighlighter
-          style={dracula}
-          language={language}
-          children={value}
-        />
-      );
-    },
-  };
-
   return (
     <div className="post overflow-scroll mx-auto mt-6 px-2">
+      <div className="mt-1 mb-1">
+        <Link to="/" className="text-blog-red text-2xl focus:outline-none">
+          &#60;&#45;&#45;&#45;&#45;&#32;back
+        </Link>
+      </div>
       <div className="post-list-meta">
         <time className="">{post.created_at}</time>•
         <span className="">
@@ -58,14 +45,10 @@ const UsePost: React.FC = (props) => {
         <h1 className="m-0">{post.title}</h1>
       </div>
       <div className="markdown-content">
-        <Markdown
-          plugins={[html, codeFrontmatter]}
-          renderers={renderers}
-          children={post.body}
-        />
+        <MarkdownContent content={post.body} />
       </div>
       <div className="mt-6 mb-24">
-        <Link to="/" className="text-blog-red focus:outline-none">
+        <Link to="/" className="text-blog-red text-2xl focus:outline-none">
           &#60;&#45;&#45;&#45;&#45;&#32;back
         </Link>
       </div>

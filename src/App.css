@@ -60,6 +60,11 @@ hr {
   border-width: 1px;
 }
 
+.posts-list-loader svg {
+  width: 100%;
+  height: 100%;
+}
+
 .post-list-meta {
   display: block;
   margin: 0.7em 0 0 0;

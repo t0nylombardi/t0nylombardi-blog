@@ -1,16 +1,15 @@
 import * as React from "react";
 import { Post } from "../../types/types";
+import MarkdownContent from "../MarkdownContent/MarkdownContent";
 import { Link } from "react-router-dom";
+import { Code } from "react-content-loader";
 
 const moment = require("moment");
-
 interface PostsProps {
   posts: Post[];
 }
 
 const Posts: React.FC<PostsProps> = ({ posts }) => {
-  const CHARLENGTH = 175;
-
   return (
     <div>
       {posts.map((post, index) => {
@@ -23,10 +22,9 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
                 </Link>
               </h1>
               <p className="excerpt m-0 text-gray-999 text-lg">
-                {post.body.length > CHARLENGTH
-                  ? post.body.substring(0, CHARLENGTH - 3) + "..."
-                  : post.body}
+                <MarkdownContent content={post.body} needsElipses />
               </p>
+
               <div className="post-list-meta ">
                 <time>
                   {moment(post.created_at).format("dddd, MMMM Do YYYY")}

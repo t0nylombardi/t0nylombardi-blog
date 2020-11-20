@@ -1,39 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../../components/Container/Container";
 import Posts from "../../components/Posts/Posts";
-const faker = require("faker");
-
-const populateSlugs = () => {
-  let slugs = [];
-  const slugNumber = Math.floor(Math.random() * (10 - 1) + 1);
-  for (let i = 0; i < slugNumber; i++) {
-    slugs.push(faker.lorem.slug());
-  }
-
-  return slugs;
-};
-
-const populatePosts = (n: number) => {
-  let data = [];
-  for (let i = 0; i < n; i++) {
-    data.push({
-      id: i + 1,
-      title: faker.name.jobDescriptor(),
-      body: faker.lorem.paragraphs(),
-      created_at: faker.date.past(5),
-      slug: populateSlugs(),
-    });
-  }
-  return data;
-};
+import { Post } from "../../types/types";
+import BlogDataService from "../../api/services/BlogService";
+import PostsListLoader from "../../components/PostsLoader/PostsLoader";
 
 const PostList: React.FC = () => {
-  const data = populatePosts(20);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
+  const getPosts = () => {
+    BlogDataService.getAll()
+      .then((response) => {
+        setPosts(response.data);
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.log("error: ", e);
+        setError(true);
+        setErrorMessage(e.message);
+        setLoading(false);
+      });
+  };
+
   return (
-    <div className="blog-wrapper bg-white">
+    <div className="blog-wrapper w-full overflow-scroll bg-white">
       <Container>
         <div className="post-list-wrapper mt-24">
-          <Posts posts={data} />
+          {error ? <PostsListLoader /> : <Posts posts={posts} />}
         </div>
       </Container>
     </div>
