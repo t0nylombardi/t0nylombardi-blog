@@ -29,10 +29,6 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
                 <time>
                   {moment(post.created_at).format("dddd, MMMM Do YYYY")}
                 </time>
-                •
-                <span>
-                  on <a href="/slugs?ruby">Ruby</a>
-                </span>
               </div>
               <hr className="post-list-divider" />
             </li>

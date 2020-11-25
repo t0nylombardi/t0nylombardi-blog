@@ -36,10 +36,7 @@ const UsePost: React.FC = (props) => {
         </Link>
       </div>
       <div className="post-list-meta">
-        <time className="">{post.created_at}</time>•
-        <span className="">
-          on <a href="">{post.slug}</a>
-        </span>
+        <time className="">{post.created_at}</time>
       </div>
       <div className="header text-5xl">
         <h1 className="m-0">{post.title}</h1>
