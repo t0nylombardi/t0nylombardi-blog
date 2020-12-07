@@ -1609,10 +1609,6 @@ video {
   background-image: none;
 }
 
-.bg-rand-front-cover {
-  background-image: url('https://picsum.photos/1920/1080');
-}
-
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--gradient-color-stops));
 }
@@ -11914,10 +11910,6 @@ hr {
     background-image: none;
   }
 
-  .sm\:bg-rand-front-cover {
-    background-image: url('https://picsum.photos/1920/1080');
-  }
-
   .sm\:bg-gradient-to-t {
     background-image: linear-gradient(to top, var(--gradient-color-stops));
   }
@@ -22074,10 +22066,6 @@ hr {
 
   .md\:bg-none {
     background-image: none;
-  }
-
-  .md\:bg-rand-front-cover {
-    background-image: url('https://picsum.photos/1920/1080');
   }
 
   .md\:bg-gradient-to-t {
@@ -32238,10 +32226,6 @@ hr {
     background-image: none;
   }
 
-  .lg\:bg-rand-front-cover {
-    background-image: url('https://picsum.photos/1920/1080');
-  }
-
   .lg\:bg-gradient-to-t {
     background-image: linear-gradient(to top, var(--gradient-color-stops));
   }
@@ -42398,10 +42382,6 @@ hr {
 
   .xl\:bg-none {
     background-image: none;
-  }
-
-  .xl\:bg-rand-front-cover {
-    background-image: url('https://picsum.photos/1920/1080');
   }
 
   .xl\:bg-gradient-to-t {

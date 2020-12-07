@@ -46,7 +46,6 @@ module.exports = {
     backgroundColor: (theme) => theme("colors"),
     backgroundImage: {
       none: "none",
-      "rand-front-cover": "url('https://picsum.photos/1920/1080')",
       "gradient-to-t": "linear-gradient(to top, var(--gradient-color-stops))",
       "gradient-to-tr":
         "linear-gradient(to top right, var(--gradient-color-stops))",

@@ -8,12 +8,13 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import Button from "../../components/Button/Button";
+import "./FrontCover.css";
 
 const FrontCover: React.FC = () => {
   const [url, setUrl] = useState(true);
 
   return (
-    <div className="front-cover w-2/5 md:w-1/5 flex h-full bg-rand-front-cover bg-cover justify-center items-center">
+    <div className="front-cover w-2/5 md:w-1/5 flex h-full bg bg-cover justify-center items-center">
       <div className="flex justify-center w-full h-full bg-gradient-to-t from-gray-dark bg-cover">
         <div className="flex flex-col justify-center items-center">
           <a href="#">
@@ -24,12 +25,12 @@ const FrontCover: React.FC = () => {
             />
           </a>
 
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col mb-6 justify-center items-center">
             <h1 className="text-4xl text-shadow-lg text-white">t0nylombardi</h1>
             <div className="text-blog-red mt-2">t0nylombardi.com blog</div>
           </div>
 
-          <div className="social-wrapper mt-4 mb-6 w-auto">
+          <div className="social-wrapper my-6 w-auto">
             <div className="mb-10 focus:outline-none">
               <Link
                 to={url ? "/resume" : "/"}
