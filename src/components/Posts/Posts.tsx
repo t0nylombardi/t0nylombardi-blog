@@ -2,7 +2,6 @@ import * as React from "react";
 import { Post } from "../../types/types";
 import MarkdownContent from "../MarkdownContent/MarkdownContent";
 import { Link } from "react-router-dom";
-import { Code } from "react-content-loader";
 
 const moment = require("moment");
 interface PostsProps {
@@ -17,7 +16,10 @@ const Posts: React.FC<PostsProps> = ({ posts }) => {
           <ol className="post-list" key={index}>
             <li>
               <h1 className="post-title text-3xl mt-0 mb-2 leading-5">
-                <Link to={`/posts/${post.id}`} className="hover:text-blog-red">
+                <Link
+                  to={`/posts/${post.slug}`}
+                  className="hover:text-blog-red"
+                >
                   {post.title}
                 </Link>
               </h1>

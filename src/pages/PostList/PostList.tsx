@@ -30,7 +30,7 @@ const PostList: React.FC = () => {
   };
 
   return (
-    <div className="blog-wrapper w-full overflow-scroll bg-white">
+    <div className="blog-wrapper w-full bg-white overflow-hidden">
       <Container>
         <div className="post-list-wrapper mt-24">
           {error ? <PostsListLoader /> : <Posts posts={posts} />}

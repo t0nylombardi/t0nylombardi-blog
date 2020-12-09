@@ -10821,16 +10821,6 @@ body {
   color: #666666;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h5 {
-  color: #333333;
-  -webkit-font-smoothing: antialiased;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -10884,10 +10874,6 @@ hr {
   width: 30%;
   margin: 2.2em 0 2.1em 0;
   border-top: 1px solid #dddddd;
-}
-
-.socials button {
-  margin: 0.5rem;
 }
 
 @media (min-width: 640px) {

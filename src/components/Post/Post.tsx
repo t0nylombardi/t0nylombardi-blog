@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Post } from "../../types/types";
 import BlogDataService from "../../api/services/BlogService";
 import { Link } from "react-router-dom";
-import "./Post.scss";
+import { DiscussionEmbed } from 'disqus-react';
 import MarkdownContent from "../MarkdownContent/MarkdownContent";
+import "./Post.scss";
 
 const UsePost: React.FC = (props) => {
   const [post, setPost] = useState<Post>({
@@ -11,7 +12,7 @@ const UsePost: React.FC = (props) => {
     title: "",
     body: "",
     created_at: "",
-    slug: [],
+    slug: "",
   });
 
   useEffect(() => {
@@ -21,6 +22,8 @@ const UsePost: React.FC = (props) => {
   const getPost = (props: any) => {
     BlogDataService.get(props.match.params.id)
       .then((response) => {
+        console.log("slug", props.match.params.id)
+        console.log("posts", response.data)
         setPost(response.data);
       })
       .catch((e) => {
@@ -44,6 +47,16 @@ const UsePost: React.FC = (props) => {
       <div className="markdown-content">
         <MarkdownContent content={post.body} />
       </div>
+      <DiscussionEmbed
+        shortname={'t0nylombardi'}
+        config={
+          {
+            url: window.location.href,
+            identifier: post.slug,
+            title: post.title,
+          }
+        }
+      />
       <div className="mt-6 mb-24">
         <Link to="/" className="text-blog-red text-2xl focus:outline-none">
           &#60;&#45;&#45;&#45;&#45;&#32;back

@@ -3,5 +3,5 @@ export interface Post {
   title: string;
   body: string;
   created_at: string;
-  slug: string[];
+  slug: string;
 }

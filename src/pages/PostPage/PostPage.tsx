@@ -4,7 +4,7 @@ import Post from "../../components/Post/Post";
 
 const PostPage: React.FC = (props) => {
   return (
-    <div className="overflow-scroll">
+    <div>
       <Container>
         <Post {...props} />
       </Container>

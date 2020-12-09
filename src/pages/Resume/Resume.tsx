@@ -5,7 +5,7 @@ import "./Resume.scss";
 
 const Resume = () => {
   return (
-    <Container>
+
       <div className="resume">
         <div className="resume-header">
           <h1 className="">ANTHONY LOMBARDI</h1>
@@ -174,7 +174,7 @@ const Resume = () => {
           </div>
         </div>
       </div>
-    </Container>
+
   );
 };
 
