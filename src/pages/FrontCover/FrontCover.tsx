@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { RESUME } from "../../routes/routes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -14,20 +13,24 @@ const FrontCover: React.FC = () => {
   const [url, setUrl] = useState(true);
 
   return (
-    <div className="front-cover flex h-full bg bg-cover">
-      <div className="flex justify-center w-full h-full bg-gradient-to-t from-gray-dark bg-cover">
+    <div className="front-cover h-screen bg bg-cover">
+      <div className="flex justify-center w-full h-screen bg-gradient-to-t from-gray-dark bg-cover">
         <div className="flex flex-col justify-center items-center">
           <a href="/">
             <img
-              className="w-32 sm:w-16 md:w-32 shadow-xl rounded-full border-2 border-white"
+              className="w-16 sm:w-32 shadow-xl rounded-full border-2 border-white"
               src="https://placebeard.it/256x256"
               alt="t0nylombardi"
             />
           </a>
 
-          <div className="flex flex-col mb-6 justify-center items-center">
-            <h1 className="text-2xl lg:text-4xl text-shadow-lg text-white">t0nylombardi</h1>
-            <div className="text-blog-red mt-2">t0nylombardi.com blog</div>
+          <div className="flex flex-col mx-3 justify-center items-center">
+            <h1 className="text-xs sm:text-2xl lg:text-4xl mx-3 text-shadow-lg text-white">
+              t0nylombardi
+            </h1>
+            <div className="text-blog-red sm:text-1xl mt-2">
+              t0nylombardi.com blog
+            </div>
           </div>
 
           <div className="social-wrapper mt-6 w-auto">

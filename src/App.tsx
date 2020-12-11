@@ -12,10 +12,10 @@ const App = () => {
   return (
     <div className="flex h-screen -mx-2">
       <Switch>
-        <div className="w-2/5 md:w-1/5">
+        <div className="w-1/3 md:w-1/5">
           <FrontCover />
         </div>
-        <div className="w-2/5 md:w-4/5 overflow-scroll">
+        <div className="w-4/6 md:w-4/5 overflow-scroll">
           <Route exact path="/" component={PostList} />
           <Route exact path="/posts/:id" component={PostPage} />
           <Route path={RESUME} component={Resume} />

@@ -2,7 +2,7 @@ import React from "react";
 
 const Container = (props: any) => {
   return (
-    <div className="wrapper w-4/5 overflow-scroll mx-auto mt-6 px-2">
+    <div className="wrapper overflow-scroll mx-5 mt-12 px-8">
       {props.children}
     </div>
   );
