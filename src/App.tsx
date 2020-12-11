@@ -1,28 +1,26 @@
-import React from "react";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
-import FrontCover from "./pages/FrontCover/FrontCover";
-import PostList from "./pages/PostList/PostList";
-import PostPage from "./pages/PostPage/PostPage";
-import Resume from "./pages/Resume/Resume";
-import { RESUME } from "./routes/routes";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-// const NotFound = () => <div>Not found</div>;
-
-const App = () => {
+function App() {
   return (
-    <div className="flex h-screen -mx-2">
-      <Switch>
-        <div className="w-1/3 md:w-1/5">
-          <FrontCover />
-        </div>
-        <div className="w-4/6 md:w-4/5 overflow-scroll">
-          <Route exact path="/" component={PostList} />
-          <Route exact path="/posts/:id" component={PostPage} />
-          <Route path={RESUME} component={Resume} />
-        </div>
-      </Switch>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
+}
 
-export { App };
+export default App;

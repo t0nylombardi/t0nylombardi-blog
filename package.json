@@ -1,63 +1,32 @@
 {
-  "name": "t0nylombardiblog",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.11",
-    "@tailwindcss/typography": "^0.2.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/classnames": "^2.2.10",
-    "@types/jest": "^24.0.0",
-    "@types/marked": "^1.1.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-router-dom": "^5.1.6",
-    "@types/react-syntax-highlighter": "^13.5.0",
-    "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "@typescript-eslint/parser": "^4.5.0",
-    "axios": "^0.21.0",
-    "chokidar-cli": "^2.1.0",
-    "classnames": "^2.2.6",
-    "disqus-react": "^1.0.10",
-    "marked": "^1.2.2",
-    "node-sass": "4.14.1",
-    "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.7.0",
-    "react": "^16.14.0",
-    "react-content-loader": "^5.1.4",
-    "react-dom": "^16.14.0",
-    "react-markdown": "^5.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "react-syntax-highlighter": "^15.3.0",
-    "remark-code-frontmatter": "^1.0.0",
-    "remark-html": "^13.0.1",
-    "sass": "^1.29.0",
-    "tailwindcss": "^1.9.5",
-    "twin.macro": "^2.0.5",
-    "typescript": "~3.7.2",
-    "watch": "^1.0.2"
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "build:tailwind": "tailwindcss build src/App.css -o src/index.css",
-    "prestart": "npm run build:tailwind",
-    "prebuild": "npm run build:tailwind",
-    "watch:dev": "nodemon -x npm run build:tailwind -w tailwind.config.js -w src/App.css",
-    "watch:css": "chokidar 'src/**/*.css' --ignore src/index.css -c 'npm run build:tailwind'",
     "start": "react-scripts start",
-    "watch": "run-p build:tailwind watch:css watch:dev start",
-    "build": "npm run build:css && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -70,12 +39,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "faker": "^5.1.0",
-    "moment": "^2.29.1",
-    "nodemon": "^2.0.6",
-    "postcss": "^8.1.4",
-    "postcss-cli": "^8.1.0"
   }
 }

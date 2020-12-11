@@ -1,47 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.App {
+  text-align: center;
+}
 
-@responsive {
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
-  .text-shadow-md {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.32), 0 2px 4px rgba(0, 0, 0, 0.08);
-  }
-
-  .text-shadow-lg {
-    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.51), 0 5px 15px rgba(0, 0, 0, 0.8);
-  }
-
-  .text-shadow-none {
-    text-shadow: none;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
 }
 
-:focus {
-  outline: 0;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-body {
-  font-family: "Raleway", sans-serif;
-  color: #666666;
+.App-link {
+  color: #61dafb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-hr {
-  display: block;
-  unicode-bidi: isolate;
-  margin-block-start: 0.5rem;
-  margin-block-end: 0.5rem;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  overflow: hidden;
-  border-style: inset;
-  border-width: 1px;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
