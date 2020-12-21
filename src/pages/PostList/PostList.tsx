@@ -25,7 +25,7 @@ const PostList: React.FC = () => {
         console.log("error: ", e);
         setError(true);
         setErrorMessage(e.message);
-        setLoading(false);
+        setLoading(true);
       });
   };
 
@@ -33,7 +33,7 @@ const PostList: React.FC = () => {
     <div className="blog-wrapper w-full bg-white overflow-hidden">
       <Container>
         <div className="post-list-wrapper mt-24">
-          {error ? <PostsListLoader /> : <Posts posts={posts} />}
+          {(error || loading) ? <PostsListLoader /> : <Posts posts={posts} />}
         </div>
       </Container>
     </div>
