@@ -19,3 +19,5 @@
     text-shadow: none;
   }
 }
+
+@import './resume.css';

@@ -1,0 +1,72 @@
+.resume {
+  margin: 2rem 2.5rem;
+}
+.resume h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.resume hr {
+  background-color: black;
+  margin: 0.8rem 0 1.2rem 0;
+  width: 40px;
+  height: 0.3rem;
+}
+
+.resume .resume-header h1 {
+  width: 0.5rem;
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.resume .resume-body-wrapper {
+  height: 100%;
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resume .skills-hobbies {
+  width: 30%;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  margin-right: 1rem;
+}
+
+.resume .skills-hobbies .skills {
+  padding: 0 2rem 4rem 0;
+}
+
+.resume .skills-hobbies .skills h1 {
+  margin: 0.6rem 0;
+}
+
+.resume .skills-hobbies .skills h2 {
+  margin: 0.8rem 0;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.resume .resume-main {
+  width: 70%;
+  margin: 1.5rem 0;
+}
+
+.resume .resume-main .profile {
+  padding-bottom: 1.2rem;
+}
+
+.resume .resume-main .profile p {
+  padding-bottom: 1.6rem;
+}
+
+.resume .resume-main .profile .employment-history {
+  padding: 1rem 0;
+}
+
+.resume .resume-main .profile .employment-history .highlights {
+  padding: 2rem 0 0 1.5rem;
+}

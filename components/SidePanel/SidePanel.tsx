@@ -36,8 +36,14 @@ const SidePanel = () => {
 
             <div className="social-wrapper mt-6 w-auto">
               <div className="mb-10 focus:outline-none">
-                <Link href={url ? '/resume' : '/'}>
-                  <Button>{url ? 'RESUME' : 'BLOG'}</Button>
+                <Link href="/resume">
+                  <a
+                    onClick={() =>
+                      router.push('/resume', undefined, { shallow: true })
+                    }
+                  >
+                    <Button>{url ? 'RESUME' : 'BLOG'}</Button>
+                  </a>
                 </Link>
               </div>
 
