@@ -10,11 +10,10 @@ type Props = {
 
 const Index = ({ allPosts }: Props) => {
   const morePosts = allPosts;
-  console.log('allPosts', allPosts);
 
   return (
     <Container>
-      <div className="post-list-wrapper mt-24 overflow-scroll">
+      <div className="post-list-wrapper mt-2 overflow-scroll">
         {allPosts.length <= 0 ? (
           <PostsListLoader />
         ) : (
@@ -30,7 +29,9 @@ export default Index;
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
     'title',
+    'coverImage',
     'date',
+    'originalDatePublished',
     'slug',
     'author',
     'coverImage',

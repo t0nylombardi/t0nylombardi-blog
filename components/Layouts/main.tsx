@@ -7,11 +7,17 @@ import SidePanel from '../SidePanel/SidePanel';
 const MainLayout = ({ children }) => {
   return (
     <div className="Layout">
-      <Head>
-        <title>T0nyLombardi | BLOG</title>
+      <Head key="main">
+        <link rel="shortcut icon" href="/assets/favicon.ico" />
+        {/* <meta name="msapplication-TileColor" content="#ffc40d" /> */}
+        <meta name="description" content="t0nylombardi.com blog" />
+        <meta name="author" content="t0nylombardi" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
+        <title>T0nyLombardi | BLOG</title>
       </Head>
+
       <div className="flex flex-wrap flex-col h-screen">
         <div className="w-2/5 lg:w-1/5">
           <SidePanel />

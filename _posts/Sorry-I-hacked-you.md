@@ -1,8 +1,8 @@
 ---
 title: Sorry, I hacked you.
 date: '2020-12-29T06:07:10.240Z'
-coverImage: ''
-originalDatePublished: '2014-11-182016-07-19T16:41:00.000Z'
+coverImage: '/assets/posts/Ways-Websites-Are-Hacked.png'
+originalDatePublished: '2016-07-19T16:41:00.000Z'
 author:
   name: t0nylombardi
   picture: ''
@@ -93,13 +93,12 @@ $(function () {
 
 this posted info into the database that looked simular to this:
 
-`name: HueBun_,Email:HueBin_piMt6@vwq4WHacked.com`
-
-`name: HueBun_,Email:HueBin_f7Txq@pzLm6Hacked.com`
-
-`name: HueBun_,Email:HueBin_YBTNf@TluieHacked.com`
-
-`name: HueBun_,Email:HueBin_QYqVm@jYWuUHacked.com`
+```
+  name: HueBun_,Email:HueBin_piMt6@vwq4WHacked.com
+  name: HueBun_,Email:HueBin_f7Txq@pzLm6Hacked.com
+  name: HueBun_,Email:HueBin_YBTNf@TluieHacked.com
+  name: HueBun_,Email:HueBin_QYqVm@jYWuUHacked.com
+```
 
 I wrote an email stating that I was really really sorry about it. More so, I meant to contact him sooner, but I just entered another year in my life and I took the weekend off from electronics (mainly because of beer)
 

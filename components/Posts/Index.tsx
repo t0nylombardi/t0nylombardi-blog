@@ -1,11 +1,8 @@
 import * as React from 'react';
 import Post from '../../types/post';
-import MarkdownContent from '../Markdown';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import moment from 'moment';
-import { Params } from 'next/dist/next-server/server/router';
-import { getPostBySlug } from '../../lib/api';
 
 const CHARLENGTH = 175;
 
@@ -23,7 +20,6 @@ const postExerpt = (content) => {
 
 const Posts = ({ posts }: Props) => {
   const router = useRouter();
-  console.log('posts', posts);
 
   return (
     <div>
@@ -41,10 +37,21 @@ const Posts = ({ posts }: Props) => {
               </p>
 
               <div className="post-list-meta ">
-                <time>{moment(post.date).format('dddd, MMMM Do YYYY')}</time>
+                <time>
+                  {moment(post.originalDatePublished).format(
+                    'dddd, MMMM Do YYYY'
+                  )}
+                </time>
               </div>
               <hr className="post-list-divider" />
             </li>
+            <style jsx global>{`
+              .post-list-divider {
+                width: 30%;
+                margin: 1rem 0 1.1rem 0;
+                border-top: 1px solid #dddddd;
+              }
+            `}</style>
           </ol>
         );
       })}

@@ -1,8 +1,8 @@
 ---
 title: 'Image Conversion'
-date: '2014-11-18'
+date: '2020-12-29'
 coverImage: ''
-originalDatePublished: 2014-11-18
+originalDatePublished: '2014-11-18'
 author:
   name: t0nylombardi
   picture: ''

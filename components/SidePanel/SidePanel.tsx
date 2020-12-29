@@ -12,7 +12,6 @@ import Button from '../Button/Button';
 const SidePanel = () => {
   const router = useRouter();
   const [url, setUrl] = useState(true);
-  console.log('href', router.pathname);
 
   return (
     <div>
@@ -34,7 +33,7 @@ const SidePanel = () => {
               <div className="text-blog-red mt-2">t0nylombardi.com blog</div>
             </div>
 
-            <div className="social-wrapper mt-6 w-auto">
+            <div className="social-wrapper flex flex-col justify-center items-center mt-6 w-auto">
               <div className="mb-10 focus:outline-none">
                 <Link href="/resume">
                   <a
@@ -47,16 +46,27 @@ const SidePanel = () => {
                 </Link>
               </div>
 
-              <div className="socials flex flex-wrap flex-col">
-                <Button>
-                  <FontAwesomeIcon icon={faTwitter} />
-                </Button>
-                <Button>
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </Button>
-                <Button>
-                  <FontAwesomeIcon icon={faGithub} />
-                </Button>
+              <div className="socials flex flex-wrap flex-row">
+                <a href="https://twitter.com/t0nylombardi" target="_blank">
+                  <Button>
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </Button>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/anthonyjlombardi/"
+                  target="_blank"
+                >
+                  <Button>
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </Button>
+                </a>
+
+                <a href="https://github.com/t0nylombardi" target="_blank">
+                  <Button>
+                    <FontAwesomeIcon icon={faGithub} />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
