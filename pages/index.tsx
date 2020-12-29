@@ -1,52 +1,44 @@
-import React, { useEffect, useState } from 'react';
 import Container from '../components/Container';
 import PostsListLoader from '../components/PostLoader';
 import Posts from '../components/Posts/Index';
-import SidePanel from '../components/SidePanel/SidePanel';
-import { Post } from '../types';
-import BlogDataService from './api/BlogService';
+import { getAllPosts } from '../lib/api';
+import Post from '../types/post';
 
-const Home = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [loading, setLoading] = useState(true);
+type Props = {
+  allPosts: Post[];
+};
 
-  useEffect(() => {
-    getPosts();
-  }, []);
-
-  const getPosts = () => {
-    BlogDataService.getAll()
-      .then((response) => {
-        setPosts(response.data);
-        setLoading(false);
-      })
-      .catch((e) => {
-        console.log('error: ', e);
-        setError(true);
-        setErrorMessage(e.message);
-        setLoading(true);
-      });
-  };
+const Index = ({ allPosts }: Props) => {
+  const morePosts = allPosts;
+  console.log('allPosts', allPosts);
 
   return (
-    <div className="flex flex-wrap overflow-hidden w-screen h-screen">
-      <div className="w-2/5 lg:w-1/5">
-        <SidePanel />
+    <Container>
+      <div className="post-list-wrapper mt-24 overflow-scroll">
+        {allPosts.length <= 0 ? (
+          <PostsListLoader />
+        ) : (
+          <Posts posts={morePosts} />
+        )}
       </div>
-
-      <div className="w-2/5 lg:w-4/5 overflow-scroll">
-        <div className="blog-wrapper w-full bg-white overflow-hidden">
-          <Container>
-            <div className="post-list-wrapper mt-24">
-              {error || loading ? <PostsListLoader /> : <Posts posts={posts} />}
-            </div>
-          </Container>
-        </div>
-      </div>
-    </div>
+    </Container>
   );
 };
 
-export default Home;
+export default Index;
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+    'content',
+  ]);
+
+  return {
+    props: { allPosts },
+  };
+};

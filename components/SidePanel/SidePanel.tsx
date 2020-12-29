@@ -64,7 +64,7 @@ const SidePanel = () => {
       </div>
       <style jsx global>{`
         .bg {
-          background-image: url('alex-perez-bg.jpg');
+          background-image: url('/assets/alex-perez-bg.jpg');
         }
 
         .socials button {
