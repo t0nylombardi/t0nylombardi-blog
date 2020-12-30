@@ -29,7 +29,7 @@ const Posts = ({ posts }: Props) => {
             <li className="py-2">
               <h1 className="post-title text-3xl mt-0 mb-2 leading-5">
                 <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
-                  <a className="hover:text-blog-red">{post.slug}</a>
+                  <a className="hover:text-blog-red">{post.title}</a>
                 </Link>
               </h1>
               <p className="excerpt m-0 text-gray-999 text-lg">

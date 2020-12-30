@@ -6,7 +6,7 @@ const Resume = () => {
     <div className="resume">
       <div className="resume-header">
         <h1 className="">ANTHONY LOMBARDI</h1>
-        <h3 className="text-2xl">Full Stack Developer</h3>
+        <h3 className="text-2xl text-blog-red">Full Stack Developer</h3>
       </div>
       <div className="resume-body-wrapper border-t-2 border-gray-c7">
         <div className="flex flex-row">
@@ -45,7 +45,7 @@ const Resume = () => {
               {/* LENDKEY  */}
               <div className="employment mb-4">
                 <div className="grid grid-cols-4">
-                  <div className="col-span-3 text-left font-bold text-gray-dark">
+                  <div className="col-span-3 text-left font-bold text-blog-red">
                     Software Engineer, LendKey Technologies
                   </div>
                   <div className="text-right">New York City</div>
@@ -89,7 +89,7 @@ const Resume = () => {
               {/* TMPG  */}
               <div className="employment mb-4">
                 <div className="grid grid-cols-4">
-                  <div className="col-span-3 text-left font-bold text-gray-dark">
+                  <div className="col-span-3 text-left font-bold text-blog-red">
                     Full-Stack Developer, TMPG
                   </div>
                   <div className="text-right">White Plains, NY</div>
@@ -126,7 +126,7 @@ const Resume = () => {
               {/* Ferguson */}
               <div className="employment mb-4">
                 <div className="grid grid-cols-4">
-                  <div className="col-span-3 text-left font-bold text-gray-dark">
+                  <div className="col-span-3 text-left font-bold text-blog-red">
                     Full-Stack Developer, Ferguson Enterprise
                   </div>
                   <div className="text-right">Goshen, NY</div>

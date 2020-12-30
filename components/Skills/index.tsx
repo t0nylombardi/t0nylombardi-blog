@@ -1,31 +1,73 @@
-const SkillObj = {
-  Ruby: 80,
-  'Ruby on Rails': 80,
-  SQL: 70,
-  HTML: 100,
-  Javascript: 70,
-  NodeJS: 50,
-  TypeScript: 50,
-  React: 60,
-  Go: 50,
-  Python: 50,
+import React, { useState } from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
+import { useSpring, animated, config } from 'react-spring';
+
+const skillsWeb = [
+  [75, 'React'],
+  [75, 'Javascript'],
+  [70, 'Typescript'],
+  [80, 'Ruby'],
+  [80, 'Ruby on Rails'],
+  [70, 'SQL'],
+  [70, 'Javascript'],
+  [50, 'NodeJS'],
+  [95, 'Html/Css'],
+  [50, 'Go'],
+  [50, 'Python'],
+];
+
+const SkillProgress = ({ percent, skillname }) => {
+  const [isInView, setIsInView] = useState(false);
+
+  const onVisibilityChange = (isInView) => setIsInView(isInView);
+
+  const progressSpringStyleProps = useSpring({
+    width: isInView ? `${percent}%` : `0%`,
+    config: config.molasses,
+  });
+
+  return (
+    <VisibilitySensor onChange={onVisibilityChange}>
+      <div>
+        <div className="relative pt-1">
+          <div>{skillname}</div>
+          <div className={'progressbar'}>
+            <animated.div
+              className={'progressbarprg'}
+              style={progressSpringStyleProps}
+            />
+          </div>
+
+          <style jsx global>{`
+            .progressbar {
+              width: 100%;
+              height: 12px;
+              background-color: #f5f5f5;
+              border-radius: 10px;
+              margin: 10px 0;
+            }
+            .progressbarprg {
+              height: 100%;
+              color: white;
+              line-height: 18px;
+              text-align: center;
+              width: 0%;
+              border-radius: 10px;
+              background-color: #b9301c;
+            }
+          `}</style>
+        </div>
+      </div>
+    </VisibilitySensor>
+  );
 };
 
 const SkillList = () => {
   return (
     <div>
-      {Object.entries(SkillObj).map(([key, value]) => {
-        return (
-          <div className="relative pt-1">
-            <h3>{key}</h3>
-            <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-c7">
-              <div
-                style={{ width: `${value}%` }}
-                className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-gray-dark"
-              ></div>
-            </div>
-          </div>
-        );
+      {skillsWeb.map((name) => {
+        console.log('skills', name);
+        return <SkillProgress percent={name[0]} skillname={name[1]} />;
       })}
     </div>
   );

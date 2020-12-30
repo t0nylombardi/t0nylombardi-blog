@@ -9,16 +9,12 @@ type Props = {
 };
 
 const Index = ({ allPosts }: Props) => {
-  const morePosts = allPosts;
+  const posts = allPosts;
 
   return (
     <Container>
       <div className="post-list-wrapper mt-2 overflow-scroll">
-        {allPosts.length <= 0 ? (
-          <PostsListLoader />
-        ) : (
-          <Posts posts={morePosts} />
-        )}
+        {allPosts.length <= 0 ? <PostsListLoader /> : <Posts posts={posts} />}
       </div>
     </Container>
   );
