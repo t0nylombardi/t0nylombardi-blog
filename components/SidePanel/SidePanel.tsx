@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +7,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import Button from '../Button/Button';
+import LetMeTakeASelfie from '../LetMeTakeASelfie/';
 
 const SidePanel = ({ onChildClick }) => {
   const router = useRouter();
@@ -17,15 +17,7 @@ const SidePanel = ({ onChildClick }) => {
       <div className="front-cover flex h-full bg bg-cover">
         <div className="flex justify-center w-full h-screen bg-gradient-to-t from-gray-dark bg-cover">
           <div className="flex flex-col justify-center items-center">
-            <Link href="/">
-              <a>
-                <img
-                  className="w-32 sm:w-16 md:w-32 shadow-xl rounded-full border-2 border-white"
-                  src="https://placebeard.it/256x256"
-                  alt="Portrait of a beared figure."
-                />
-              </a>
-            </Link>
+            <LetMeTakeASelfie />
 
             <div className="flex flex-col mb-6 justify-center items-center">
               <h1 className="text-2xl lg:text-4xl text-shadow-lg text-white">

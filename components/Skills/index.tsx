@@ -65,9 +65,10 @@ const SkillProgress = ({ percent, skillname }) => {
 const SkillList = () => {
   return (
     <div>
-      {skillsWeb.map((name) => {
-        console.log('skills', name);
-        return <SkillProgress percent={name[0]} skillname={name[1]} />;
+      {skillsWeb.map((name, index) => {
+        return (
+          <SkillProgress key={index} percent={name[0]} skillname={name[1]} />
+        );
       })}
     </div>
   );
