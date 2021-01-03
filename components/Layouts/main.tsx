@@ -4,10 +4,6 @@ import SidePanel from '../SidePanel/SidePanel';
 import { useSpring, animated, config } from 'react-spring';
 
 const MainLayout = ({ children }) => {
-  console.log(
-    "is this a picture me? I don't know. I can't remember. Pepperidge Farms remembers"
-  );
-
   const [isExpanded, setExpanded] = useState(true);
   const style = useSpring({
     width: isExpanded ? '100vw' : '25%',

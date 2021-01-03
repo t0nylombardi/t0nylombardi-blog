@@ -1,13 +1,11 @@
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   purge: [
-    './pages/**/*.js',
-    './pages/**/*.jsx',
-    './pages/**/*.ts',
-    './pages/**/*.tsx',
-    './components/**/*.js',
-    './components/**/*.jsx',
-    './components/**/*.ts',
-    './components/**/*.tsx',
+    './pages/**/*.{js,ts,tsx}',
+    './components/**/*.{js,ts,tsx}',
   ],
   prefix: "",
   important: false,
@@ -314,13 +312,17 @@ module.exports = {
       150: "1.5",
     },
     rotate: {
-      "-180": "-180deg",
-      "-90": "-90deg",
-      "-45": "-45deg",
-      0: "0",
-      45: "45deg",
-      90: "90deg",
-      180: "180deg",
+      rotate: {
+        '-180': '-180deg',
+        '-90': '-90deg',
+        '-45': '-45deg',
+        '0': '0',
+        '45': '45deg',
+        '90': '90deg',
+        '135': '135deg',
+        '180': '180deg',
+        '270': '270deg',
+       }
     },
   },
   variants: {
