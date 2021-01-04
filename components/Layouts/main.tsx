@@ -26,14 +26,14 @@ const MainLayout = ({ children }) => {
         <title>T0nyLombardi | BLOG</title>
       </Head>
 
-      <div className="flex flex-wrap flex-col h-screen">
+      <div className="flex flex-wrap flex-col h-screen overflow-hidden">
         <div className="z-10">
           <animated.div style={style}>
             <SidePanel onChildClick={setButtonHandler} />
           </animated.div>
         </div>
 
-        <div className="w-2/5 lg:w-3/4 flex overflow-hidden">
+        <div className="w-3/4 flex overflow-hidden">
           <div className="blog-wrapper w-full overflow-y-scroll">
             {children}
           </div>
