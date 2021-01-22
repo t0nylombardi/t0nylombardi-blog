@@ -6,7 +6,8 @@ import { useSpring, animated, config } from 'react-spring';
 const MainLayout = ({ children }) => {
   const [isExpanded, setExpanded] = useState(true);
   const style = useSpring({
-    width: isExpanded ? '100vw' : '25%',
+    width: isExpanded ? '100vw' : '0px',
+    opacity: isExpanded ? '1' : '0',
     config: config.wobbly,
   });
 
@@ -27,13 +28,13 @@ const MainLayout = ({ children }) => {
       </Head>
 
       <div className="flex flex-wrap flex-col h-screen">
-        <div className="z-10">
+        <div className="">
           <animated.div style={style}>
             <SidePanel onChildClick={setButtonHandler} />
           </animated.div>
         </div>
 
-        <div className="w-2/5 lg:w-3/4 flex overflow-hidden">
+        <div className={`w-full lg:w-3/4 overflow-hidden ${isExpanded ? "hidden" : "flex"} z-10`}>
           <div className="blog-wrapper w-full overflow-y-scroll">
             {children}
           </div>

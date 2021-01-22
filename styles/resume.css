@@ -71,3 +71,22 @@
 .resume .resume-main .profile .employment-history .highlights {
   padding: 2rem 0 0 1.5rem;
 }
+
+@media screen and (max-width: 425px) {
+  .resume-body-wrapper > div {
+    flex-direction: column;
+  }
+
+  .resume .skills-hobbies {
+    width: 100%;
+    border: none;
+  }
+
+  .resume .resume-header h1 {
+    font-size: 13vw;
+  }
+
+  .resume .resume-main {
+    width: 100%;
+  }
+}
