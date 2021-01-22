@@ -5,7 +5,7 @@ const LetMeTakeASelfie = () => {
     <Link href="/">
       <a>
         <img
-          className="w-40 h-40 shadow-xl rounded-full border-2 border-white object-cover"
+          className="md:w-40 w-16 shadow-xl rounded-full border-2 border-white object-cover"
           src="https://placebeard.it/256x256"
           alt="Portrait of a bearded figure."
         />
