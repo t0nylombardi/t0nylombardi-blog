@@ -22,4 +22,9 @@
   }
 }
 
+html,
+body {
+  overflow: hidden;
+}
+
 @import './resume.css';
