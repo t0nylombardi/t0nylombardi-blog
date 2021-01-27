@@ -19,7 +19,7 @@ const Post = ({ post }: Props) => {
   return (
     <>
       <Head>
-        <title> {post.title}| T0nyLombardi</title>
+        <title> {post.title} | T0nyLombardi BLOG</title>
       </Head>
       <div className="post overflow-scroll max-w-4/5 mx-auto">
         <div className="mt-1 mb-1">
