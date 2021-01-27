@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SidePanel from '../SidePanel/SidePanel';
 import { useSpring, animated, config } from 'react-spring';
 import BackToMenu from '../BackToMenu';
-const MainLayout = ({ children }) => {
+
+const MainLayout = ({ children, route }) => {
   const [isExpanded, setExpanded] = useState(true);
   const [isVisable, setVisable] = useState(false);
 
@@ -17,6 +18,14 @@ const MainLayout = ({ children }) => {
     setExpanded(!isExpanded);
     setVisable(!isVisable);
   };
+
+  useEffect(() => {
+    console.log('router', route);
+    if (route == '/posts/[slug]' || route == '/resume') {
+      setExpanded(!isExpanded);
+      setVisable(!isVisable);
+    }
+  }, []);
 
   return (
     <div className="Layout">

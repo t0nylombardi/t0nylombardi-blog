@@ -1,15 +1,16 @@
 import React from 'react';
 import App from 'next/app';
+import { useRouter } from 'next/router';
 import MainLayout from '../components/Layouts/main';
 import '../styles/index.css';
 import '../styles/pages/main.css';
 class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, router } = this.props;
 
     return (
       <>
-        <MainLayout>
+        <MainLayout route={router.pathname}>
           <Component {...pageProps} />
         </MainLayout>
         <style jsx global>{`
@@ -24,3 +25,11 @@ class MyApp extends App {
 }
 
 export default MyApp;
+
+export const getStaticProps = async () => {
+  const router = useRouter();
+
+  return {
+    props: { router },
+  };
+};
