@@ -20,9 +20,4 @@
   }
 }
 
-body {
-  margin: 0 !important;
-  overflow: hidden;
-}
-
 @import './resume.css';
