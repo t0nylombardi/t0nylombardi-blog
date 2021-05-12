@@ -18,7 +18,7 @@
     "moment": "^2.29.1",
     "next": "^10.0.3",
     "next-absolute-url": "^1.2.2",
-    "postcss": "^7",
+    "postcss": "^8",
     "react": "^17.0.1",
     "react-content-loader": "^5.1.4",
     "react-dom": "^17.0.1",
